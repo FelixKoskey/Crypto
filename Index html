@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoTrade Pro - Live Trading Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="crypto-icon">₿</div>
+            <h2>CryptoTrade Pro</h2>
+            <p>Loading trading platform...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="root"></div>
+
+    <!-- Live Stats Bar (Fixed at top) -->
+    <div id="live-stats" class="live-stats hidden">
+        <div class="stat-item">
+            <span class="stat-icon">👥</span>
+            <span class="stat-label">Active Users:</span>
+            <span class="stat-value" id="active-users">0</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-icon">📊</span>
+            <span class="stat-label">24h Volume:</span>
+            <span class="stat-value" id="volume-24h">$0</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-icon">🎯</span>
+            <span class="stat-label">Active Signals:</span>
+            <span class="stat-value" id="active-signals">0</span>
+        </div>
+        <div class="stat-item pulse">
+            <span class="status-dot"></span>
+            <span class="stat-label">Live</span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/babel" src="script.js"></script>
+</body>
+</html>
