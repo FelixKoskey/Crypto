@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPro - Live Trading</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container { max-width: 480px; margin: 0 auto; }
+        
+        .card {
+            background: rgba(20, 35, 60, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(100, 200, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; transform: translateX(-100%); }
+        }
+        
+        .header-text {
+            text-align: center;
+            font-size: 14px;
+            color: #00d9ff;
+            letter-spacing: 4px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .balance {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00d9ff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 32px;
+            letter-spacing: -2px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00d9ff, #0099cc);
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 217, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #ff006e, #cc0055);
+            color: #fff;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 0, 110, 0.4);
+        }
+        
+        .btn-trade {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #000;
+            margin-bottom: 16px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .section-title {
+            color: #00d9ff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .asset-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: rgba(10, 25, 45, 0.6);
+            border-radius: 16px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(100, 200, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .asset-item:hover {
+            transform: translateX(5px);
+            border-color: #00d9ff;
+        }
+        
+        .asset-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d9ff, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 16px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .asset-info { flex: 1; }
+        
+        .asset-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .asset-amount {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .asset-value { text-align: right; }
+        
+        .asset-price {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .asset-change {
+            font-size: 13px;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+        
+        .positive {
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+        }
+        
+        .negative {
+            color: #ff006e;
+            background: rgba(255, 0, 110, 0.1);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .modal.active { display: flex; }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+            border-radius: 24px;
+            padding: 32px;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .input-group { margin-bottom: 20px; }
+        
+        .input-label {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 16px;
+            background: rgba(10, 25, 45, 0.6);
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #00d9ff;
+        }
+        
+        .close-modal {
+            background: rgba(255, 255, 255, 0.1);
+            margin-top: 16px;
+        }
+        
+        .info-box {
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .warning-box {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #fbbf24;
+        }
+        
+        .success-box {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .pending-item {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid #fbbf24;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .btn-sm {
+            padding: 10px;
+            font-size: 13px;
+        }
+        
+        .logo {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 32px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .live-stats {
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 24px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00d9ff;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
+        }
+        
+        .account-toggle {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .toggle-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .toggle-btn.active {
+            background: linear-gradient(135deg, #00d9ff, #0099cc);
+            color: #fff;
+            border-color: #00d9ff;
+        }
+        
+        .bank-details {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .bank-details p {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .bank-details strong {
+            color: #00d9ff;
+        }
+        
+        .admin-login {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(251, 191, 36, 0.2);
+            border: 2px solid #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 999;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* LIVE MARKET FEED */
+        .market-feed {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        
+        .feed-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background: rgba(10, 25, 45, 0.4);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            border-left: 3px solid;
+            animation: slideInRight 0.5s ease-out;
+        }
+        
+        .feed-item.buy { border-left-color: #00ff88; }
+        .feed-item.sell { border-left-color: #ff006e; }
+        
+        .feed-item.removing {
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+        
+        /* TRADING SIGNALS */
+        .signal-item {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(168, 85, 247, 0.1));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+            animation: slideInRight 0.5s ease-out;
+        }
+        
+        .signal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .signal-pair {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00d9ff;
+        }
+        
+        .signal-type {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .signal-type.buy {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+        }
+        
+        .signal-type.sell {
+            background: rgba(255, 0, 110, 0.2);
+            color: #ff006e;
+        }
+        
+        .signal-data {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            font-size: 12px;
+        }
+        
+        .signal-data div {
+            text-align: center;
+        }
+        
+        .signal-label {
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 4px;
+        }
+        
+        .signal-value {
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .hidden { display: none !important; }
+        
+        .price-up {
+            animation: priceFlashGreen 0.5s ease-out;
+        }
+        
+        .price-down {
+            animation: priceFlashRed 0.5s ease-out;
+        }
+        
+        @keyframes priceFlashGreen {
+            0%, 100% { background-color: transparent; }
+            50% { background-color: rgba(0, 255, 136, 0.3); }
+        }
+        
+        @keyframes priceFlashRed {
+            0%, 100% { background-color: transparent; }
+            50% { background-color: rgba(255, 0, 110, 0.3); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">💎 CryptoPro</div>
+        
+        <div class="live-stats">
+            <div class="stat">
+                <div class="stat-value" id="liveUsers">1,247</div>
+                <div class="stat-label">ACTIVE USERS</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="volume24h">$97.5M</div>
+                <div class="stat-label">24H VOLUME</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">🔴 LIVE</div>
+                <div class="stat-label">STATUS</div>
+            </div>
+        </div>
+        
+        <!-- LIVE TRADING SIGNALS -->
+        <div class="card">
+            <div class="section-title">🎯 LIVE TRADING SIGNALS</div>
+            <div id="signalsFeed"></div>
+        </div>
+        
+        <!-- LIVE MARKET ACTIVITY -->
+        <div class="card">
+            <div class="section-title">📊 LIVE MARKET ACTIVITY</div>
+            <div class="market-feed" id="marketFeed"></div>
+        </div>
+        
+        <div class="card">
+            <div class="account-toggle">
+                <button class="toggle-btn active" id="demoBtn" onclick="switchAccount('demo')">
+                    🎮 DEMO
+                </button>
+                <button class="toggle-btn" id="realBtn" onclick="switchAccount('real')">
+                    💰 REAL
+                </button>
+            </div>
+            
+            <div class="header-text">TOTAL PORTFOLIO VALUE</div>
+            <div class="balance" id="totalBalance">$0.00</div>
+            
+            <button class="btn btn-trade" onclick="openModal('trade')">⚡ TRADE NOW</button>
+            <button class="btn btn-primary" onclick="openModal('deposit')">DEPOSIT</button>
+            <button class="btn btn-secondary" onclick="openModal('withdraw')">WITHDRAW</button>
+        </div>
+        
+        <!-- LIVE CRYPTO PRICES -->
+        <div class="card">
+            <div class="section-title">💹 LIVE PRICES</div>
+            
+            <div class="asset-item" id="btcAsset">
+                <div class="asset-icon">₿</div>
+                <div class="asset-info">
+                    <div class="asset-name">BTC/USDT</div>
+                    <div class="asset-amount">Bitcoin</div>
+                </div>
+                <div class="asset-value">
+                    <div class="asset-price" id="btcPrice">$64,250.00</div>
+                    <div class="asset-change positive" id="btcChange">+2.45%</div>
+                </div>
+            </div>
+            
+            <div class="asset-item" id="ethAsset">
+                <div class="asset-icon">Ξ</div>
+                <div class="asset-info">
+                    <div class="asset-name">ETH/USDT</div>
+                    <div class="asset-amount">Ethereum</div>
+                </div>
+                <div class="asset-value">
+                    <div class="asset-price" id="ethPrice">$3,420.00</div>
+                    <div class="asset-change negative" id="ethChange">-1.23%</div>
+                </div>
+            </div>
+            
+            <div class="asset-item" id="bnbAsset">
+                <div class="asset-icon">🔸</div>
+                <div class="asset-info">
+                    <div class="asset-name">BNB/USDT</div>
+                    <div class="asset-amount">Binance Coin</div>
+                </div>
+                <div class="asset-value">
+                    <div class="asset-price" id="bnbPrice">$580.00</div>
+                    <div class="asset-change positive" id="bnbChange">+0.89%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="section-title">MY ASSETS</div>
+            
+            <div class="asset-item">
+                <div class="asset-icon">💵</div>
+                <div class="asset-info">
+                    <div class="asset-name">USDT</div>
+                    <div class="asset-amount" id="usdtAmount">0.00 USDT</div>
+                </div>
+                <div class="asset-value">
+                    <div class="asset-price" id="usdtValue">$0.00</div>
+                    <div class="asset-change" style="color: rgba(255,255,255,0.5)">STABLE</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card hidden" id="adminPanel">
+            <div class="section-title">⚡ Platform Control</div>
+            <div class="success-box">Total Deposits: $<span id="adminWallet">0.00</span></div>
+            
+            <div id="pendingDeposits"></div>
+            <div id="pendingWithdrawals"></div>
+            
+            <button class="btn btn-primary" onclick="openModal('adminWithdraw')">💸 WITHDRAW FUNDS</button>
+            <button class="btn btn-secondary" onclick="logout()">🚪 LOGOUT</button>
+        </div>
+    </div>
+    
+    <!-- Admin Login Button -->
+    <div class="admin-login" onclick="openModal('adminLogin')">🔐</div>
+    
+    <!-- ALL MODALS (same as before) -->
+    <div class="modal" id="adminLoginModal">
+        <div class="modal-content">
+            <div class="modal-title">🔐 ADMIN LOGIN</div>
+            <div class="input-group">
+                <label class="input-label">Password</label>
+                <input type="password" id="adminPassword" placeholder="Enter admin password">
+            </div>
+            <button class="btn btn-primary" onclick="adminLogin()">LOGIN</button>
+            <button class="btn close-modal" onclick="closeModal('adminLogin')">CANCEL</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="depositModal">
+        <div class="modal-content">
+            <div class="modal-title">💵 DEPOSIT FUNDS</div>
+            
+            <div class="warning-box">
+                ⚠️ Send money to the bank account below, then submit this form. Your deposit will be approved within 1-24 hours after verification.
+            </div>
+            
+            <div class="bank-details">
+                <p><strong>Bank Name:</strong> <span>Chase Bank</span></p>
+                <p><strong>Account Number:</strong> <span>1234567890</span></p>
+                <p><strong>Account Name:</strong> <span>CryptoPro Ltd</span></p>
+                <p><strong>Swift Code:</strong> <span>CHASUS33</span></p>
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Amount You Sent (USD)</label>
+                <input type="number" id="depositAmount" placeholder="0.00" min="10">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Transaction Reference / ID</label>
+                <input type="text" id="depositReference" placeholder="e.g., TXN123456">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Additional Notes (Optional)</label>
+                <textarea id="depositNotes" placeholder="Any additional information..."></textarea>
+            </div>
+            
+            <button class="btn btn-primary" onclick="submitDeposit()">SUBMIT DEPOSIT</button>
+            <button class="btn close-modal" onclick="closeModal('deposit')">CANCEL</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="tradeModal">
+        <div class="modal-content">
+            <div class="modal-title">⚡ TRADE CRYPTO</div>
+            
+            <div class="input-group">
+                <label class="input-label">Select Pair</label>
+                <select id="tradePair">
+                    <option value="BTC/USDT">BTC/USDT</option>
+                    <option value="ETH/USDT">ETH/USDT</option>
+                    <option value="BNB/USDT">BNB/USDT</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Amount (USDT)</label>
+                <input type="number" id="tradeAmount" placeholder="0.00" min="10">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Trade Type</label>
+                <select id="tradeType">
+                    <option value="BUY">BUY (Long)</option>
+                    <option value="SELL">SELL (Short)</option>
+                </select>
+            </div>
+            
+            <button class="btn btn-trade" onclick="executeTrade()">EXECUTE TRADE</button>
+            <button class="btn close-modal" onclick="closeModal('trade')">CANCEL</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="withdrawModal">
+        <div class="modal-content">
+            <div class="modal-title">💸 WITHDRAW FUNDS</div>
+            
+            <div class="warning-box">
+                ⏳ Withdrawals require admin approval and typically take 1-48 hours to process.
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Amount (USD)</label>
+                <input type="number" id="withdrawAmount" placeholder="0.00" min="10">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Your Bank Name</label>
+                <input type="text" id="userBankName" placeholder="e.g., Chase Bank">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Your Account Number</label>
+                <input type="text" id="userAccountNumber" placeholder="123456789">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Account Holder Name</label>
+                <input type="text" id="userAccountName" placeholder="John Doe">
+            </div>
+            
+            <button class="btn btn-secondary" onclick="submitWithdrawal()">REQUEST WITHDRAWAL</button>
+            <button class="btn close-modal" onclick="closeModal('withdraw')">CANCEL</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="adminWithdrawModal">
+        <div class="modal-content">
+            <div class="modal-title">💸 ADMIN WITHDRAWAL</div>
+            
+            <div class="success-box">
+                Available: $<span id="adminTotal">0.00</span>
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Amount to Withdraw</label>
+                <input type="number" id="adminWithdrawAmount" placeholder="0.00">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Your Bank Name</label>
+                <input type="text" id="adminBankName" placeholder="Your Bank">
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Your Account Number</label>
+                <input type="text" id="adminAccountNumber" placeholder="123456789">
+            </div>
+            
+            <button class="btn btn-primary" onclick="confirmAdminWithdraw()">WITHDRAW</button>
+            <button class="btn close-modal" onclick="closeModal('adminWithdraw')">CANCEL</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
