@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CryptoPro - Professional Trading Platform</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        .layer { display: none; min-height: 100vh; }
+        .layer.active { display: block; }
+        .navbar { 
+            background: rgba(20, 35, 60, 0.95); 
+            padding: 16px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+        }
+        .logo { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            font-size: 24px; 
+            font-weight: 700; 
+            color: #00d9ff; 
+            cursor: pointer;
+        }
+        .nav-btn { 
+            padding: 10px 20px; 
+            border: 2px solid #00d9ff;
+            border-radius: 8px; 
+            background: transparent;
+            color: #00d9ff;
+            font-weight: 600; 
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .container { max-width: 900px; margin: 30px auto; padding: 20px; }
+        .card { 
+            background: rgba(20, 35, 60, 0.9); 
+            border-radius: 24px; 
+            padding: 30px; 
+            margin-bottom: 24px;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+        .btn { 
+            padding: 16px 32px; 
+            border: none; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .btn-primary { background: linear-gradient(135deg, #00d9ff, #0099cc); color: #fff; }
+        .hero { text-align: center; padding: 60px 20px; }
+        .hero h1 { 
+            font-size: 42px; 
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #00d9ff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+        .form-group input { 
+            width: 100%; 
+            padding: 14px;
+            background: rgba(10, 25, 45, 0.6);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .auth-container { 
+            max-width: 480px; 
+            margin: 60px auto; 
+            padding: 40px;
+            background: rgba(20, 35, 60, 0.95);
+            border-radius: 24px;
+        }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active { display: flex; }
+        .modal-content { 
+            background: #0a1628;
+            padding: 32px;
+            border-radius: 24px;
+            max-width: 500px;
+            width: 90%;
+        }
+        .payment-method {
+            background: rgba(10, 25, 45, 0.6);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            border: 2px solid rgba(0, 217, 255, 0.2);
+            cursor: pointer;
+        }
+        .alert { 
+            padding: 12px; 
+            border-radius: 12px; 
+            margin-bottom: 16px; 
+            display: none; 
+        }
+        .alert.show { display: block; }
+        .alert-error { background: rgba(255, 0, 110, 0.15); color: #ff006e; }
+        .alert-success { background: rgba(0, 255, 136, 0.15); color: #00ff88; }
+    </style>
+</head>
+<body>
+
+<!-- HOME -->
+<div id="homeLayer" class="layer active">
+    <nav class="navbar">
+        <div class="logo" onclick="showLayer('homeLayer')">
+            <span>💎</span><span>CryptoPro</span>
+        </div>
+        <div>
+            <button class="nav-btn" onclick="showLayer('loginLayer')">Login</button>
+            <button class="nav-btn" onclick="showLayer('signupLayer')">Sign Up</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="hero">
+            <h1>Trade Crypto Like a Pro</h1>
+            <p style="color: rgba(255,255,255,0.8); margin: 20px 0;">Professional crypto trading platform with real money payments</p>
+            <button class="btn btn-primary" onclick="showLayer('signupLayer')" style="max-width: 300px; margin: 0 auto;">Get Started Free</button>
+        </div>
+        <div class="card">
+            <h2 style="color: #00d9ff; margin-bottom: 20px;">Real Payment Methods</h2>
+            <div style="display: grid; gap: 15px;">
+                <div style="background: rgba(0,255,136,0.1); padding: 15px; border-radius: 8px;">
+                    <div style="font-size: 20px;">📱 M-Pesa - Instant</div>
+                </div>
+                <div style="background: rgba(0,255,136,0.1); padding: 15px; border-radius: 8px;">
+                    <div style="font-size: 20px;">₿ Crypto (USDT)</div>
+                </div>
+                <div style="background: rgba(0,255,136,0.1); padding: 15px; border-radius: 8px;">
+                    <div style="font-size: 20px;">🏦 Bank Transfer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SIGNUP -->
+<div id="signupLayer" class="layer">
+    <nav class="navbar">
+        <div class="logo" onclick="showLayer('homeLayer')"><span>💎</span><span>CryptoPro</span></div>
+        <button class="nav-btn" onclick="showLayer('loginLayer')">Login</button>
+    </nav>
+    <div class="auth-container">
+        <h1 style="text-align: center; color: #00d9ff; margin-bottom: 30px;">Create Account</h1>
+        <div class="alert alert-error" id="signupAlert"></div>
+        <div class="alert alert-success" id="signupSuccess"></div>
+        <form onsubmit="handleSignup(event)">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="signupName" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="signupEmail" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="signupPassword" required minlength="6">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" id="signupConfirm" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Account</button>
+        </form>
+        <p style="text-align: center; margin-top: 20px;">
+            <a onclick="showLayer('loginLayer')" style="color: #00d9ff; cursor: pointer;">Login here</a>
+        </p>
+    </div>
+</div>
+
+<!-- LOGIN -->
+<div id="loginLayer" class="layer">
+    <nav class="navbar">
+        <div class="logo" onclick="showLayer('homeLayer')"><span>💎</span><span>CryptoPro</span></div>
+        <button class="nav-btn" onclick="showLayer('signupLayer')">Sign Up</button>
+    </nav>
+    <div class="auth-container">
+        <h1 style="text-align: center; color: #00d9ff; margin-bottom: 30px;">Login</h1>
+        <div class="alert alert-error" id="loginAlert"></div>
+        <form onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <p style="text-align: center; margin-top: 20px;">
+            <a onclick="showLayer('signupLayer')" style="color: #00d9ff; cursor: pointer;">Sign up here</a>
+        </p>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardLayer" class="layer">
+    <nav class="navbar">
+        <div class="logo"><span>💎</span><span>CryptoPro</span></div>
+        <button class="nav-btn" onclick="logout()">Logout</button>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h1 style="text-align: center; color: #00d9ff;">Welcome!</h1>
+            <p style="text-align: center; margin: 20px 0; font-size: 36px; font-weight: 700;" id="balance">$10,000.00</p>
+            <button class="btn btn-primary" onclick="showModal('depositModal')">💰 Deposit Real Money</button>
+        </div>
+    </div>
+</div>
+
+<!-- DEPOSIT MODAL -->
+<div id="depositModal" class="modal">
+    <div class="modal-content">
+        <h2 style="color: #00d9ff; margin-bottom: 20px;">Deposit Real Money</h2>
+        <div class="form-group">
+            <label>Amount (USD)</label>
+            <input type="number" id="depositAmount" min="10" value="100">
+        </div>
+        <h3 style="color: #00d9ff; margin: 20px 0;">Select Payment:</h3>
+        <div class="payment-method" onclick="selectPayment('mpesa')">
+            <div style="font-size: 18px; font-weight: 700;">📱 M-Pesa (Kenya)</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Instant payment</div>
+        </div>
+        <div class="payment-method" onclick="selectPayment('crypto')">
+            <div style="font-size: 18px; font-weight: 700;">₿ Cryptocurrency</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.6);">USDT (TRC20)</div>
+        </div>
+        <button class="btn btn-primary" onclick="closeModal('depositModal')" style="margin-top: 20px;">Cancel</button>
+    </div>
+</div>
+
+<script>
+var currentUser = null;
+var users = {};
+
+function showLayer(id) {
+    document.querySelectorAll('.layer').forEach(l => l.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+function showAlert(id, msg, type) {
+    var el = document.getElementById(id);
+    el.textContent = msg;
+    el.className = 'alert alert-' + type + ' show';
+    setTimeout(() => el.classList.remove('show'), 4000);
+}
+
+function showModal(id) {
+    document.getElementById(id).classList.add('active');
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+}
+
+function handleSignup(e) {
+    e.preventDefault();
+    var name = document.getElementById('signupName').value;
+    var email = document.getElementById('signupEmail').value;
+    var pass = document.getElementById('signupPassword').value;
+    var confirm = document.getElementById('signupConfirm').value;
+    
+    if (pass !== confirm) {
+        showAlert('signupAlert', 'Passwords do not match!', 'error');
+        return;
+    }
+    
+    if (users[email]) {
+        showAlert('signupAlert', 'Email already registered!', 'error');
+        return;
+    }
+    
+    users[email] = { name: name, email: email, password: pass, balance: 10000 };
+    localStorage.setItem('cryptoUsers', JSON.stringify(users));
+    
+    showAlert('signupSuccess', 'Account created!', 'success');
+    setTimeout(() => {
+        currentUser = users[email];
+        showLayer('dashboardLayer');
+    }, 1500);
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    var email = document.getElementById('loginEmail').value;
+    var pass = document.getElementById('loginPassword').value;
+    
+    if (!users[email]) {
+        showAlert('loginAlert', 'Account not found!', 'error');
+        return;
+    }
+    
+    if (users[email].password !== pass) {
+        showAlert('loginAlert', 'Wrong password!', 'error');
+        return;
+    }
+    
+    currentUser = users[email];
+    showLayer('dashboardLayer');
+    document.getElementById('balance').textContent = '$' + currentUser.balance.toFixed(2);
+}
+
+function logout() {
+    if (confirm('Logout?')) {
+        currentUser = null;
+        showLayer('homeLayer');
+    }
+}
+
+function selectPayment(method) {
+    var amount = document.getElementById('depositAmount').value;
+    closeModal('depositModal');
+    
+    if (method === 'mpesa') {
+        alert('M-PESA PAYMENT\n\nTill: 7500474\nAmount: KSh ' + (amount * 130) + '\n\nSend payment then click OK');
+        confirmDeposit(parseFloat(amount));
+    } else {
+        alert('CRYPTO PAYMENT\n\nAddress: TK4rUz6TUEd7zCWeuiX5R47pSNdPswJnAc\nAmount: $' + amount + '\n\nSend USDT then click OK');
+        confirmDeposit(parseFloat(amount));
+    }
+}
+
+function confirmDeposit(amount) {
+    if (currentUser) {
+        currentUser.balance += amount;
+        document.getElementById('balance').textContent = '$' + currentUser.balance.toFixed(2);
+        alert('✅ DEPOSIT CONFIRMED!\n\n$' + amount + ' added to your account');
+    }
+}
+
+// Load users from localStorage
+try {
+    var stored = localStorage.getItem('cryptoUsers');
+    if (stored) users = JSON.parse(stored);
+} catch(e) {}
+</script>
+
+</body>
+</html>
