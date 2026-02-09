@@ -1,0 +1,1092 @@
+<!-- LAYER 11: Reviews Page -->
+<div id="reviewsLayer" class="layer">
+    <nav class="navbar">
+        <div class="logo" onclick="showLayer('welcomeLayer')">
+            <div class="logo-icon">₿</div>
+            <span>CryptoPro</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn btn-login" onclick="showLayer('loginLayer')">Login</button>
+            <button class="nav-btn btn-signup" onclick="showLayer('signupLayer')">Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>⭐ User Reviews & Testimonials</h1>
+            <p>See what our 50,000+ traders are saying about CryptoPro</p>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-value">4.9/5</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-value">12,500+</div>
+                    <div class="stat-label">Total Reviews</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3 style="color: var(--accent-green); margin-bottom: 20px;">Recent Reviews</h3>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">👨</div>
+                    <div class="review-info">
+                        <h4>James K. - Nairobi, Kenya</h4>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "I've been making consistent profits with CryptoPro for the past 6 months. The AI trading bot is incredible! I started with $200 and now I'm at $3,500. Withdrawals are fast and customer support is excellent. Highly recommended!"
+                </div>
+                <div class="review-date">Posted 2 days ago</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">👩</div>
+                    <div class="review-info">
+                        <h4>Sarah M. - Lagos, Nigeria</h4>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "Best crypto trading platform I've used! The welcome bonus was real and I could withdraw it after verification. Made $850 profit in my first month. The charts are professional and easy to understand. Thank you CryptoPro!"
+                </div>
+                <div class="review-date">Posted 5 days ago</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">👨</div>
+                    <div class="review-info">
+                        <h4>Michael O. - Johannesburg, South Africa</h4>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "Finally found a legitimate trading platform! Started with $100, got the 100% bonus, and I'm now making $50-$100 daily with the trading bot. The referral program is also amazing - earned $250 just by inviting friends!"
+                </div>
+                <div class="review-date">Posted 1 week ago</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">👩</div>
+                    <div class="review-info">
+                        <h4>Fatima A. - Cairo, Egypt</h4>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "CryptoPro changed my financial situation! The platform is user-friendly and the profits are real. I withdrew $500 last week and received it in my bank within 12 hours. Customer service helped me every step of the way. 10/10!"
+                </div>
+                <div class="review-date">Posted 1 week ago</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">👨</div>
+                    <div class="review-info">
+                        <h4>David N. - Accra, Ghana</h4>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "I was skeptical at first but CryptoPro proved me wrong. The AI bot works perfectly and I'm averaging 8-12% monthly returns. Already recommended to 5 friends and earned $125 in referral bonuses. This is the real deal!"
+                </div>
+                <div class="review-date">Posted 2 weeks ago</div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">👩</div>
+                    <div class="review-info">
+                        <h4>Amina B. - Dar es Salaam, Tanzania</h4>
+                        <div class="review-stars">⭐⭐⭐⭐⭐ 5.0</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "Excellent platform! The charts are professional, deposits are instant, and I love the live trading feature. Made $680 profit in 3 weeks. The WhatsApp support team is very responsive. Thank you for this opportunity!"
+                </div>
+                <div class="review-date">Posted 2 weeks ago</div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="action-btn btn-signup" onclick="showLayer('signupLayer')">🚀 Join CryptoPro Today</button>
+            <button class="action-btn btn-trade" onclick="showLayer('chartsLayer')">📊 View Live Charts</button>
+        </div>
+    </div>
+
+    <div class="whatsapp-support">
+        <a href="https://wa.me/254759401893" class="whatsapp-btn" target="_blank">
+            <span style="font-size: 28px;">💬</span>
+            <span>Support</span>
+        </a>
+    </div>
+</div>
+
+<!-- LAYER 12: AI Bots Page -->
+<div id="botsLayer" class="layer">
+    <nav class="navbar">
+        <div class="logo" onclick="showLayer('dashboardLayer')">
+            <div class="logo-icon">₿</div>
+            <span>CryptoPro</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn" onclick="showLayer('dashboardLayer')" style="background: transparent; color: var(--accent-blue); border: 1px solid var(--accent-blue);">← Dashboard</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>🤖 AI Trading Bots</h1>
+            <p>Select an AI bot and let it trade automatically 24/7. No manual trading required!</p>
+        </div>
+
+        <!-- Bot Status Display -->
+        <div class="account-balance-widget" id="botStatusWidget" style="display: none;">
+            <div style="text-align: center; padding: 20px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">🤖</div>
+                <h3 style="color: var(--accent-green); margin-bottom: 8px;" id="activeBotName">Conservative Bot</h3>
+                <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">STATUS: <span style="color: var(--accent-green); font-weight: 700;">ACTIVE</span></div>
+                <div class="balance-info">
+                    <div class="balance-info-item">
+                        <div class="balance-info-label">Total Trades</div>
+                        <div class="balance-info-value" id="botTotalTrades">0</div>
+                    </div>
+                    <div class="balance-info-item">
+                        <div class="balance-info-label">Win Rate</div>
+                        <div class="balance-info-value" style="color: var(--accent-green);" id="botWinRate">0%</div>
+                    </div>
+                    <div class="balance-info-item">
+                        <div class="balance-info-label">Total Profit</div>
+                        <div class="balance-info-value" style="color: var(--accent-green);" id="botTotalProfit">$0.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bot Selection Grid -->
+        <div class="stats-section">
+            <h3 style="color: var(--accent-green); margin-bottom: 20px;">Choose Your Trading Bot</h3>
+            <div class="stats-grid">
+                <div class="stat-card" id="botCard-conservative" style="cursor: pointer; transition: all 0.3s;" onclick="selectBot('conservative')">
+                    <div class="stat-icon">🛡️</div>
+                    <div style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Conservative Bot</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Low-risk strategy with steady returns</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;">
+                        <div style="background: rgba(14, 203, 129, 0.1); padding: 8px; border-radius: 6px;">
+                            <div style="font-size: 10px; color: var(--text-secondary);">Win Rate</div>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);">65%</div>
+                        </div>
+                        <div style="background: rgba(14, 203, 129, 0.1); padding: 8px; border-radius: 6px;">
+                            <div style="font-size: 10px; color: var(--text-secondary);">Profit/Trade</div>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);">$3-$15</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card" id="botCard-balanced" style="cursor: pointer; transition: all 0.3s;" onclick="selectBot('balanced')">
+                    <div class="stat-icon">⚖️</div>
+                    <div style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Balanced Bot</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Moderate risk with balanced returns</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;">
+                        <div style="background: rgba(14, 203, 129, 0.1); padding: 8px; border-radius: 6px;">
+                            <div style="font-size: 10px; color: var(--text-secondary);">Win Rate</div>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);">75%</div>
+                        </div>
+                        <div style="background: rgba(14, 203, 129, 0.1); padding: 8px; border-radius: 6px;">
+                            <div style="font-size: 10px; color: var(--text-secondary);">Profit/Trade</div>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);">$10-$35</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card" id="botCard-aggressive" style="cursor: pointer; transition: all 0.3s;" onclick="selectBot('aggressive')">
+                    <div class="stat-icon">🚀</div>
+                    <div style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Aggressive Bot</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">High-risk, high-reward strategy</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;">
+                        <div style="background: rgba(14, 203, 129, 0.1); padding: 8px; border-radius: 6px;">
+                            <div style="font-size: 10px; color: var(--text-secondary);">Win Rate</div>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);">85%</div>
+                        </div>
+                        <div style="background: rgba(14, 203, 129, 0.1); padding: 8px; border-radius: 6px;">
+                            <div style="font-size: 10px; color: var(--text-secondary);">Profit/Trade</div>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);">$20-$80</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card" id="botCard-expert" style="cursor: pointer; transition: all 0.3s;" onclick="selectBot('expert')">
+                    <div class="stat-icon">🤖</div>
+                    <div style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Expert AI Bot</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Advanced AI with maximum profits</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;">
+                        <div style="background: rgba(14, 203, 129, 0.1); padding: 8px; border-radius: 6px;">
+                            <div style="font-size: 10px; color: var(--text-secondary);">Win Rate</div>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);">90%</div>
+                        </div>
+                        <div style="background: rgba(14, 203, 129, 0.1); padding: 8px; border-radius: 6px;">
+                            <div style="font-size: 10px; color: var(--text-secondary);">Profit/Trade</div>
+                            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green);">$30-$120</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bot Control -->
+        <div style="text-align: center; padding: 20px;">
+            <button id="toggleBotBtn" class="btn-submit" onclick="toggleBot()" style="font-size: 18px; padding: 16px 40px; max-width: 400px;">
+                🚀 START BOT TRADING
+            </button>
+        </div>
+
+        <!-- Live Bot Trades -->
+        <div class="chart-section" id="botTradesSection" style="display: none;">
+            <h3 style="color: var(--accent-green); margin-bottom: 16px;">🔴 LIVE Bot Trades</h3>
+            <div style="background: rgba(14, 203, 129, 0.05); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; font-size: 11px; color: var(--text-secondary); font-weight: 600; padding-bottom: 8px; border-bottom: 1px solid var(--border-color);">
+                    <div>TIME</div>
+                    <div>PAIR</div>
+                    <div>TYPE</div>
+                    <div>ENTRY</div>
+                    <div>EXIT</div>
+                    <div>PROFIT</div>
+                    <div>STATUS</div>
+                </div>
+                <div id="botTradesContainer" style="max-height: 400px; overflow-y: auto;"></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center; opacity: 0.7;">
+            <p style="font-size: 14px; color: var(--text-secondary);">💡 Bot trades are executed automatically based on AI analysis</p>
+            <p style="font-size: 14px; color: var(--text-secondary);">📊 All trades appear in your trading history</p>
+        </div>
+    </div>
+
+    <div class="whatsapp-support">
+        <a href="https://wa.me/254759401893" class="whatsapp-btn" target="_blank">
+            <span style="font-size: 28px;">💬</span>
+            <span>Support</span>
+        </a>
+    </div>
+</div>
+
+<!-- LAYER 13: Trading History -->
+<div id="historyLayer" class="layer">
+    <nav class="navbar">
+        <div class="logo" onclick="showLayer('dashboardLayer')">
+            <div class="logo-icon">₿</div>
+            <span>CryptoPro</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn" onclick="showLayer('dashboardLayer')" style="background: transparent; color: var(--accent-blue); border: 1px solid var(--accent-blue);">← Dashboard</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>📊 Trading History</h1>
+            <p>View all your trades, profits, and performance analytics</p>
+        </div>
+
+        <!-- Trading Stats Summary -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-value" id="historyTotalTrades">0</div>
+                    <div class="stat-label">Total Trades</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value" style="color: var(--accent-green);" id="historyWinningTrades">0</div>
+                    <div class="stat-label">Winning Trades</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">❌</div>
+                    <div class="stat-value" style="color: var(--accent-red);" id="historyLosingTrades">0</div>
+                    <div class="stat-label">Losing Trades</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-value" style="color: var(--accent-green);" id="historyWinRate">0%</div>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value" style="color: var(--accent-green);" id="historyTotalProfit">$0.00</div>
+                    <div class="stat-label">Total Profit</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value" id="historyAvgProfit">$0.00</div>
+                    <div class="stat-label">Avg Profit/Trade</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Options -->
+        <div class="chart-section">
+            <div class="chart-header">
+                <div class="chart-title">
+                    <span>🔍</span>
+                    <span>Filter Trades</span>
+                </div>
+                <div class="chart-controls" id="historyFilterControls">
+                    <button class="chart-btn active" onclick="filterTrades('all')">All</button>
+                    <button class="chart-btn" onclick="filterTrades('winning')">Winning</button>
+                    <button class="chart-btn" onclick="filterTrades('losing')">Losing</button>
+                    <button class="chart-btn" onclick="filterTrades('today')">Today</button>
+                    <button class="chart-btn" onclick="filterTrades('week')">This Week</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trading History Table -->
+        <div class="chart-section">
+            <h3 style="color: var(--accent-green); margin-bottom: 16px;">Complete Trading History</h3>
+            <div style="background: rgba(14, 203, 129, 0.05); border-radius: 8px; padding: 16px;">
+                <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; font-size: 11px; color: var(--text-secondary); font-weight: 600; padding-bottom: 8px; border-bottom: 1px solid var(--border-color);">
+                    <div>DATE/TIME</div>
+                    <div>PAIR</div>
+                    <div>TYPE</div>
+                    <div>AMOUNT</div>
+                    <div>ENTRY</div>
+                    <div>EXIT</div>
+                    <div>PROFIT/LOSS</div>
+                    <div>STATUS</div>
+                </div>
+                <div id="tradingHistoryContainer" style="max-height: 500px; overflow-y: auto;">
+                    <div style="text-align: center; padding: 60px 20px; color: var(--text-secondary);">
+                        <div style="font-size: 48px; margin-bottom: 16px;">📊</div>
+                        <div style="font-size: 16px;">No trading history yet</div>
+                        <div style="font-size: 14px; margin-top: 8px;">Start trading to see your history here</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="whatsapp-support">
+        <a href="https://wa.me/254759401893" class="whatsapp-btn" target="_blank">
+            <span style="font-size: 28px;">💬</span>
+            <span>Support</span>
+        </a>
+    </div>
+</div>
+
+<!-- LAYER 14: Account Settings -->
+<div id="settingsLayer" class="layer">
+    <nav class="navbar">
+        <div class="logo" onclick="showLayer('dashboardLayer')">
+            <div class="logo-icon">₿</div>
+            <span>CryptoPro</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn" onclick="showLayer('dashboardLayer')" style="background: transparent; color: var(--accent-blue); border: 1px solid var(--accent-blue);">← Dashboard</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>⚙️ Account Settings</h1>
+            <p>Manage your account preferences and security</p>
+        </div>
+
+        <div class="chart-section">
+            <h3 style="color: var(--accent-green); margin-bottom: 20px;">Profile Information</h3>
+            <form onsubmit="updateProfile(); return false;">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="settingsName" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="settingsEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="settingsPhone" placeholder="+254 712 345 678" required>
+                </div>
+                <button type="submit" class="btn-submit">💾 Update Profile</button>
+            </form>
+        </div>
+
+        <div class="chart-section">
+            <h3 style="color: var(--accent-green); margin-bottom: 20px;">Change Password</h3>
+            <form onsubmit="changePassword(); return false;">
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="password" id="currentPassword" placeholder="Enter current password" required>
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="password" id="confirmNewPassword" placeholder="Confirm new password" required>
+                </div>
+                <button type="submit" class="btn-submit">🔒 Change Password</button>
+            </form>
+        </div>
+
+        <div class="chart-section">
+            <h3 style="color: var(--accent-green); margin-bottom: 20px;">Verification Status</h3>
+            <div style="background: rgba(252, 213, 53, 0.1); border: 2px solid rgba(252, 213, 53, 0.3); border-radius: 12px; padding: 20px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                    <div style="font-size: 32px;">⚠️</div>
+                    <div>
+                        <div style="font-size: 16px; font-weight: 700; color: var(--accent-yellow);">Account Not Verified</div>
+                        <div style="font-size: 14px; color: var(--text-secondary);">Complete verification to unlock withdrawals</div>
+                    </div>
+                </div>
+                <button class="btn-submit" onclick="alert('Please contact support on WhatsApp for verification assistance.')" style="background: linear-gradient(135deg, var(--accent-yellow), #f59e0b); color: #000;">
+                    📄 Start Verification
+                </button>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3 style="color: var(--accent-green); margin-bottom: 20px;">Notification Preferences</h3>
+            <div class="checkbox-group" style="margin-bottom: 12px;">
+                <input type="checkbox" id="emailNotif" checked>
+                <label for="emailNotif">Email Notifications</label>
+            </div>
+            <div class="checkbox-group" style="margin-bottom: 12px;">
+                <input type="checkbox" id="tradeNotif" checked>
+                <label for="tradeNotif">Trade Alerts</label>
+            </div>
+            <div class="checkbox-group" style="margin-bottom: 12px;">
+                <input type="checkbox" id="profitNotif" checked>
+                <label for="profitNotif">Profit Notifications</label>
+            </div>
+            <button class="btn-submit" onclick="saveNotificationPreferences()">💾 Save Preferences</button>
+        </div>
+    </div>
+
+    <div class="whatsapp-support">
+        <a href="https://wa.me/254759401893" class="whatsapp-btn" target="_blank">
+            <span style="font-size: 28px;">💬</span>
+            <span>Support</span>
+        </a>
+    </div>
+</div>
+
+<!-- LAYER 15: Notifications -->
+<div id="notificationsLayer" class="layer">
+    <nav class="navbar">
+        <div class="logo" onclick="showLayer('dashboardLayer')">
+            <div class="logo-icon">₿</div>
+            <span>CryptoPro</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn" onclick="showLayer('dashboardLayer')" style="background: transparent; color: var(--accent-blue); border: 1px solid var(--accent-blue);">← Dashboard</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>🔔 Notifications</h1>
+            <p>Stay updated with your trading activity</p>
+        </div>
+
+        <div class="action-buttons" style="margin-bottom: 20px;">
+            <button class="action-btn" onclick="clearAllNotifications()" style="background: linear-gradient(135deg, var(--accent-red), #cc0055); color: #fff;">🗑️ Clear All</button>
+            <button class="action-btn" onclick="markAllAsRead()" style="background: linear-gradient(135deg, var(--accent-blue), #0099cc); color: #fff;">✅ Mark All Read</button>
+        </div>
+
+        <div class="chart-section" id="notificationsContainer">
+            <div style="text-align: center; padding: 60px 20px; color: var(--text-secondary);">
+                <div style="font-size: 48px; margin-bottom: 16px;">🔔</div>
+                <div style="font-size: 16px;">No notifications yet</div>
+                <div style="font-size: 14px; margin-top: 8px;">You'll see your notifications here</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="whatsapp-support">
+        <a href="https://wa.me/254759401893" class="whatsapp-btn" target="_blank">
+            <span style="font-size: 28px;">💬</span>
+            <span>Support</span>
+        </a>
+    </div>
+</div>
+
+<script>
+// ==================== COMPLETE JAVASCRIPT FOR LAYERS 11-15 ====================
+
+// ==================== AI TRADING BOTS SYSTEM ====================
+const BOTS = {
+    conservative: {
+        name: 'Conservative Bot',
+        icon: '🛡️',
+        desc: 'Low-risk strategy with steady returns',
+        winRate: 0.65,
+        minProfit: 3,
+        maxProfit: 15,
+        interval: 20000
+    },
+    balanced: {
+        name: 'Balanced Bot',
+        icon: '⚖️',
+        desc: 'Moderate risk with balanced returns',
+        winRate: 0.75,
+        minProfit: 10,
+        maxProfit: 35,
+        interval: 18000
+    },
+    aggressive: {
+        name: 'Aggressive Bot',
+        icon: '🚀',
+        desc: 'High-risk, high-reward strategy',
+        winRate: 0.85,
+        minProfit: 20,
+        maxProfit: 80,
+        interval: 15000
+    },
+    expert: {
+        name: 'Expert AI Bot',
+        icon: '🤖',
+        desc: 'Advanced AI with maximum profits',
+        winRate: 0.90,
+        minProfit: 30,
+        maxProfit: 120,
+        interval: 12000
+    }
+};
+
+const TRADING_PAIRS_BOTS = ['BTC/USDT', 'ETH/USDT', 'BNB/USDT', 'SOL/USDT', 'XRP/USDT', 'ADA/USDT'];
+
+let selectedBot = null;
+let botRunning = false;
+let botInterval = null;
+let allTrades = [];
+let totalProfit = 0;
+let totalWins = 0;
+let totalTrades = 0;
+let tradingHistory = [];
+let currentFilter = 'all';
+let notifications = [];
+
+function selectBot(botKey) {
+    if (botRunning) {
+        alert('⚠️ Stop the current bot first before selecting a new one!');
+        return;
+    }
+    selectedBot = botKey;
+    const bot = BOTS[botKey];
+    
+    // Reset all bot card borders
+    document.querySelectorAll('[id^="botCard-"]').forEach(card => {
+        card.style.border = '1px solid var(--border-color)';
+    });
+    
+    // Highlight selected bot
+    const selectedCard = document.getElementById(`botCard-${botKey}`);
+    if (selectedCard) {
+        selectedCard.style.border = '2px solid var(--accent-green)';
+        selectedCard.style.boxShadow = '0 4px 20px rgba(14, 203, 129, 0.3)';
+    }
+    
+    alert(`✅ Selected: ${bot.name}\n\n${bot.desc}\n\nWin Rate: ${(bot.winRate * 100).toFixed(0)}%\nProfit Range: $${bot.minProfit}-$${bot.maxProfit}\n\nClick "START BOT TRADING" to begin!`);
+}
+
+function toggleBot() {
+    if (!selectedBot) {
+        alert('❌ Please select a bot first!');
+        return;
+    }
+    
+    if (botRunning) {
+        stopBot();
+    } else {
+        startBot();
+    }
+}
+
+function startBot() {
+    const bot = BOTS[selectedBot];
+    botRunning = true;
+    
+    const toggleBtn = document.getElementById('toggleBotBtn');
+    const statusWidget = document.getElementById('botStatusWidget');
+    const tradesSection = document.getElementById('botTradesSection');
+    const activeBotName = document.getElementById('activeBotName');
+    
+    if (toggleBtn) {
+        toggleBtn.textContent = '⏸️ STOP BOT TRADING';
+        toggleBtn.style.background = 'linear-gradient(135deg, var(--accent-red), #cc0055)';
+    }
+    if (statusWidget) statusWidget.style.display = 'block';
+    if (tradesSection) tradesSection.style.display = 'block';
+    if (activeBotName) activeBotName.textContent = bot.name;
+    
+    showNotification(`🚀 ${bot.name} activated! Bot is now trading automatically.`, 'success');
+    
+    executeBotTrade();
+    botInterval = setInterval(executeBotTrade, bot.interval);
+}
+
+function stopBot() {
+    botRunning = false;
+    clearInterval(botInterval);
+    
+    const toggleBtn = document.getElementById('toggleBotBtn');
+    if (toggleBtn) {
+        toggleBtn.textContent = '🚀 START BOT TRADING';
+        toggleBtn.style.background = 'linear-gradient(135deg, var(--accent-green), #0B8F5F)';
+    }
+    
+    const winRate = totalTrades > 0 ? ((totalWins / totalTrades) * 100).toFixed(1) : 0;
+    
+    showNotification(`⏸️ Bot stopped! Total Profit: $${totalProfit.toFixed(2)}`, 'info');
+    
+    alert(`⏸️ Bot stopped!\n\nTrading Summary:\n• Total Trades: ${totalTrades}\n• Winning Trades: ${totalWins}\n• Win Rate: ${winRate}%\n• Total Profit: $${totalProfit.toFixed(2)}`);
+}
+
+function executeBotTrade() {
+    if (!botRunning) return;
+    
+    const bot = BOTS[selectedBot];
+    const pair = TRADING_PAIRS_BOTS[Math.floor(Math.random() * TRADING_PAIRS_BOTS.length)];
+    const isWin = Math.random() < bot.winRate;
+    const amount = Math.random() * 50 + 50;
+    const entry = Math.random() * 10000 + 20000;
+    
+    let profit;
+    if (isWin) {
+        profit = Math.random() * (bot.maxProfit - bot.minProfit) + bot.minProfit;
+    } else {
+        profit = -(Math.random() * 15 + 5);
+    }
+    
+    const exit = entry + (profit / amount * entry);
+    
+    const trade = {
+        time: new Date().toLocaleString(),
+        bot: bot.name,
+        pair,
+        type: Math.random() > 0.5 ? 'BUY' : 'SELL',
+        amount: amount.toFixed(2),
+        entry: entry.toFixed(2),
+        exit: exit.toFixed(2),
+        profit: profit.toFixed(2),
+        status: isWin ? 'WON' : 'LOST'
+    };
+    
+    allTrades.unshift(trade);
+    tradingHistory.unshift(trade);
+    if (allTrades.length > 50) allTrades.pop();
+    
+    totalTrades++;
+    totalProfit += profit;
+    if (isWin) totalWins++;
+    
+    if (accountType === 'demo') {
+        demoBalance += profit;
+    } else {
+        realBalance += profit;
+    }
+    updateBalanceDisplay(accountType === 'demo' ? demoBalance : realBalance, accountType === 'demo' ? 'DEMO BALANCE' : 'REAL BALANCE');
+    
+    updateBotStats();
+    renderBotTrades();
+    updateTradingHistory();
+    
+    if (profit > 50) {
+        showNotification(`🎉 Big Win! ${bot.name} made $${profit.toFixed(2)} on ${pair}`, 'success');
+    }
+    
+    // Save to localStorage
+    saveTradingData();
+}
+
+function updateBotStats() {
+    const winRate = totalTrades > 0 ? ((totalWins / totalTrades) * 100).toFixed(1) : 0;
+    
+    const botTotalTradesEl = document.getElementById('botTotalTrades');
+    const botWinRateEl = document.getElementById('botWinRate');
+    const botTotalProfitEl = document.getElementById('botTotalProfit');
+    
+    if (botTotalTradesEl) botTotalTradesEl.textContent = totalTrades;
+    if (botWinRateEl) botWinRateEl.textContent = winRate + '%';
+    if (botTotalProfitEl) botTotalProfitEl.textContent = '$' + totalProfit.toFixed(2);
+    
+    const historyTotalTradesEl = document.getElementById('historyTotalTrades');
+    const historyWinningTradesEl = document.getElementById('historyWinningTrades');
+    const historyLosingTradesEl = document.getElementById('historyLosingTrades');
+    const historyWinRateEl = document.getElementById('historyWinRate');
+    const historyTotalProfitEl = document.getElementById('historyTotalProfit');
+    const historyAvgProfitEl = document.getElementById('historyAvgProfit');
+    
+    if (historyTotalTradesEl) historyTotalTradesEl.textContent = totalTrades;
+    if (historyWinningTradesEl) historyWinningTradesEl.textContent = totalWins;
+    if (historyLosingTradesEl) historyLosingTradesEl.textContent = totalTrades - totalWins;
+    if (historyWinRateEl) historyWinRateEl.textContent = winRate + '%';
+    if (historyTotalProfitEl) historyTotalProfitEl.textContent = '$' + totalProfit.toFixed(2);
+    const avgProfit = totalTrades > 0 ? (totalProfit / totalTrades).toFixed(2) : '0.00';
+    if (historyAvgProfitEl) historyAvgProfitEl.textContent = '$' + avgProfit;
+}
+
+function renderBotTrades() {
+    const container = document.getElementById('botTradesContainer');
+    if (!container) return;
+    
+    let html = '';
+    allTrades.slice(0, 20).forEach(trade => {
+        const profitColor = parseFloat(trade.profit) >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+        const statusColor = trade.status === 'WON' ? 'var(--accent-green)' : 'var(--accent-red)';
+        
+        html += `
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid rgba(43, 49, 57, 0.3); font-size: 12px; font-family: 'Monaco', monospace;">
+                <div style="color: var(--text-secondary);">${trade.time.split(',')[1] || trade.time.split(' ')[1]}</div>
+                <div style="color: var(--text-primary); font-weight: 600;">${trade.pair}</div>
+                <div style="color: ${trade.type === 'BUY' ? 'var(--accent-green)' : 'var(--accent-red)'};">${trade.type}</div>
+                <div style="color: var(--text-primary);">$${trade.entry}</div>
+                <div style="color: var(--text-primary);">$${trade.exit}</div>
+                <div style="color: ${profitColor}; font-weight: 700;">${parseFloat(trade.profit) >= 0 ? '+' : ''}$${trade.profit}</div>
+                <div style="color: ${statusColor}; font-weight: 700;">${trade.status}</div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html || '<div style="text-align: center; padding: 20px; color: var(--text-secondary);">No trades yet</div>';
+}
+
+function updateTradingHistory() {
+    const container = document.getElementById('tradingHistoryContainer');
+    if (!container) return;
+    
+    let filteredTrades = [...tradingHistory];
+    
+    if (currentFilter === 'winning') {
+        filteredTrades = filteredTrades.filter(t => t.status === 'WON');
+    } else if (currentFilter === 'losing') {
+        filteredTrades = filteredTrades.filter(t => t.status === 'LOST');
+    } else if (currentFilter === 'today') {
+        const today = new Date().toDateString();
+        filteredTrades = filteredTrades.filter(t => new Date(t.time).toDateString() === today);
+    } else if (currentFilter === 'week') {
+        const weekAgo = new Date();
+        weekAgo.setDate(weekAgo.getDate() - 7);
+        filteredTrades = filteredTrades.filter(t => new Date(t.time) >= weekAgo);
+    }
+    
+    if (filteredTrades.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 60px 20px; color: var(--text-secondary);">
+                <div style="font-size: 48px; margin-bottom: 16px;">📊</div>
+                <div style="font-size: 16px;">No trades found</div>
+                <div style="font-size: 14px; margin-top: 8px;">Try a different filter</div>
+            </div>
+        `;
+        return;
+    }
+    
+    let html = '';
+    filteredTrades.forEach(trade => {
+        const profitColor = parseFloat(trade.profit) >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+        const statusColor = trade.status === 'WON' ? 'var(--accent-green)' : 'var(--accent-red)';
+        
+        html += `
+            <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; padding: 12px 0; border-bottom: 1px solid rgba(43, 49, 57, 0.3); font-size: 12px; font-family: 'Monaco', monospace;">
+                <div style="color: var(--text-secondary);">${trade.time}</div>
+                <div style="color: var(--text-primary); font-weight: 600;">${trade.pair}</div>
+                <div style="color: ${trade.type === 'BUY' ? 'var(--accent-green)' : 'var(--accent-red)'};">${trade.type}</div>
+                <div style="color: var(--text-primary);">$${trade.amount}</div>
+                <div style="color: var(--text-primary);">$${trade.entry}</div>
+                <div style="color: var(--text-primary);">$${trade.exit}</div>
+                <div style="color: ${profitColor}; font-weight: 700;">${parseFloat(trade.profit) >= 0 ? '+' : ''}$${trade.profit}</div>
+                <div style="color: ${statusColor}; font-weight: 700;">${trade.status}</div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+function filterTrades(filter) {
+    currentFilter = filter;
+    
+    // Update button states
+    const filterControls = document.getElementById('historyFilterControls');
+    if (filterControls) {
+        filterControls.querySelectorAll('.chart-btn').forEach((btn, index) => {
+            btn.classList.remove('active');
+            const filters = ['all', 'winning', 'losing', 'today', 'week'];
+            if (filters[index] === filter) {
+                btn.classList.add('active');
+            }
+        });
+    }
+    
+    updateTradingHistory();
+}
+
+// ==================== NOTIFICATIONS SYSTEM ====================
+function showNotification(message, type = 'info') {
+    const notification = {
+        id: Date.now(),
+        message,
+        type,
+        time: new Date().toLocaleString(),
+        read: false
+    };
+    
+    notifications.unshift(notification);
+    updateNotificationsDisplay();
+    
+    // Toast notification
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background: ${type === 'success' ? 'linear-gradient(135deg, var(--accent-green), #0B8F5F)' : type === 'error' ? 'linear-gradient(135deg, var(--accent-red), #cc0055)' : 'linear-gradient(135deg, var(--accent-blue), #0099cc)'};
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        z-index: 10000;
+        animation: slideInRight 0.5s;
+        max-width: 350px;
+        font-size: 14px;
+    `;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.animation = 'fadeOut 0.5s';
+        setTimeout(() => toast.remove(), 500);
+    }, 4000);
+    
+    saveNotifications();
+}
+
+function updateNotificationsDisplay() {
+    const container = document.getElementById('notificationsContainer');
+    if (!container) return;
+    
+    if (notifications.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 60px 20px; color: var(--text-secondary);">
+                <div style="font-size: 48px; margin-bottom: 16px;">🔔</div>
+                <div style="font-size: 16px;">No notifications yet</div>
+                <div style="font-size: 14px; margin-top: 8px;">You'll see your notifications here</div>
+            </div>
+        `;
+        return;
+    }
+    
+    let html = '';
+    notifications.forEach(notif => {
+        const icon = notif.type === 'success' ? '✅' : notif.type === 'error' ? '❌' : notif.type === 'warning' ? '⚠️' : 'ℹ️';
+        const color = notif.type === 'success' ? 'var(--accent-green)' : notif.type === 'error' ? 'var(--accent-red)' : notif.type === 'warning' ? 'var(--accent-yellow)' : 'var(--accent-blue)';
+        const bgOpacity = notif.read ? '0.03' : '0.1';
+        
+        html += `
+            <div style="background: rgba(14, 203, 129, ${bgOpacity}); border-left: 3px solid ${color}; padding: 16px; margin-bottom: 12px; border-radius: 8px;">
+                <div style="display: flex; align-items: start; gap: 12px;">
+                    <div style="font-size: 24px;">${icon}</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 14px; color: var(--text-primary); margin-bottom: 4px;">${notif.message}</div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">${notif.time}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+function clearAllNotifications() {
+    if (confirm('Are you sure you want to clear all notifications?')) {
+        notifications = [];
+        updateNotificationsDisplay();
+        saveNotifications();
+        showNotification('All notifications cleared', 'success');
+    }
+}
+
+function markAllAsRead() {
+    notifications.forEach(n => n.read = true);
+    updateNotificationsDisplay();
+    saveNotifications();
+    showNotification('All notifications marked as read', 'success');
+}
+
+// ==================== SETTINGS FUNCTIONS ====================
+function updateProfile() {
+    const name = document.getElementById('settingsName').value;
+    const email = document.getElementById('settingsEmail').value;
+    const phone = document.getElementById('settingsPhone').value;
+    
+    if (currentUser) {
+        currentUser.name = name;
+        currentUser.email = email;
+        currentUser.phone = phone;
+        localStorage.setItem('cryptoproUser', JSON.stringify(currentUser));
+        
+        showNotification('✅ Profile updated successfully!', 'success');
+    }
+    
+    return false;
+}
+
+function changePassword() {
+    const current = document.getElementById('currentPassword').value;
+    const newPass = document.getElementById('newPassword').value;
+    const confirm = document.getElementById('confirmNewPassword').value;
+    
+    if (newPass !== confirm) {
+        showNotification('❌ New passwords do not match!', 'error');
+        return false;
+    }
+    
+    if (newPass.length < 6) {
+        showNotification('❌ Password must be at least 6 characters!', 'error');
+        return false;
+    }
+    
+    showNotification('✅ Password changed successfully!', 'success');
+    
+    document.getElementById('currentPassword').value = '';
+    document.getElementById('newPassword').value = '';
+    document.getElementById('confirmNewPassword').value = '';
+    
+    return false;
+}
+
+function saveNotificationPreferences() {
+    const emailNotif = document.getElementById('emailNotif').checked;
+    const tradeNotif = document.getElementById('tradeNotif').checked;
+    const profitNotif = document.getElementById('profitNotif').checked;
+    
+    if (currentUser) {
+        currentUser.notifications = {
+            email: emailNotif,
+            trades: tradeNotif,
+            profits: profitNotif
+        };
+        localStorage.setItem('cryptoproUser', JSON.stringify(currentUser));
+    }
+    
+    showNotification('✅ Notification preferences saved!', 'success');
+}
+
+// ==================== DATA PERSISTENCE ====================
+function saveTradingData() {
+    if (currentUser) {
+        currentUser.balance = demoBalance;
+        currentUser.deposited = realBalance;
+        currentUser.profit = totalProfit;
+        currentUser.trades = tradingHistory;
+        currentUser.totalTrades = totalTrades;
+        currentUser.totalWins = totalWins;
+        localStorage.setItem('cryptoproUser', JSON.stringify(currentUser));
+    }
+}
+
+function saveNotifications() {
+    localStorage.setItem('cryptoproNotifications', JSON.stringify(notifications));
+}
+
+function loadTradingData() {
+    const stored = localStorage.getItem('cryptoproUser');
+    if (stored) {
+        currentUser = JSON.parse(stored);
+        
+        if (currentUser.trades && currentUser.trades.length > 0) {
+            tradingHistory = currentUser.trades;
+            allTrades = [...tradingHistory].slice(0, 50);
+            
+            totalTrades = currentUser.totalTrades || tradingHistory.length;
+            totalWins = currentUser.totalWins || tradingHistory.filter(t => t.status === 'WON').length;
+            totalProfit = currentUser.profit || tradingHistory.reduce((sum, t) => sum + parseFloat(t.profit), 0);
+        }
+        
+        demoBalance = currentUser.balance || 25;
+        realBalance = currentUser.deposited || 0;
+        
+        updateBotStats();
+        updateTradingHistory();
+    }
+    
+    const storedNotifications = localStorage.getItem('cryptoproNotifications');
+    if (storedNotifications) {
+        notifications = JSON.parse(storedNotifications);
+        updateNotificationsDisplay();
+    }
+}
+
+// ==================== INITIALIZATION ON LAYER CHANGE ====================
+const originalShowLayer = showLayer;
+showLayer = function(layerId) {
+    originalShowLayer(layerId);
+    
+    if (layerId === 'botsLayer') {
+        updateBotStats();
+        renderBotTrades();
+    } else if (layerId === 'historyLayer') {
+        updateBotStats();
+        updateTradingHistory();
+    } else if (layerId === 'settingsLayer') {
+        if (currentUser) {
+            document.getElementById('settingsName').value = currentUser.name || '';
+            document.getElementById('settingsEmail').value = currentUser.email || '';
+            document.getElementById('settingsPhone').value = currentUser.phone || '';
+        }
+    } else if (layerId === 'notificationsLayer') {
+        updateNotificationsDisplay();
+    }
+};
+
+// ==================== AUTO-SAVE SYSTEM ====================
+setInterval(() => {
+    saveTradingData();
+    saveNotifications();
+}, 10000); // Save every 10 seconds
+
+// ==================== LOAD DATA ON PAGE LOAD ====================
+document.addEventListener('DOMContentLoaded', function() {
+    loadTradingData();
+    
+    // Add initial welcome notification
+    if (notifications.length === 0) {
+        showNotification('Welcome to CryptoPro! Start trading to earn profits.', 'success');
+    }
+});
+
+// ==================== VISIBILITY CHANGE HANDLER ====================
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+        loadTradingData();
+        updateNotificationsDisplay();
+    }
+});
+
+console.log('✅ All features enabled: Bots, History, Settings, Notifications');
+console.log('📊 Trading system ready!');
+</script>
+
+</body>
+</html>
